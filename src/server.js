@@ -2,6 +2,8 @@ const http = require('http');
 const htmlRoute = require('../src/routes/htmlRoute');
 const cssRoute = require('../src/routes/cssRoute');
 const jsRoute = require('../src/routes/jsRoute');
+const imgRoute = require('../src/routes/imgRoute');
+
 const server=http.createServer(async(req, res) => {
     if(req.method!='GET')
     {
@@ -54,8 +56,17 @@ const server=http.createServer(async(req, res) => {
             break;
         case '/img':
             res.writeHead(200,{'Content-Type':'	image/jpeg'});
-            res.end('<h1>img page</h1>');
-            // res.end(imgRoute( ));
+            imgRoute((err,data)=>{
+                if(err)
+                {
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('Internal Server Error');
+                }else{
+                    res.write(data);
+                    res.end();
+                }
+                
+            });
             break;
         default:
             res.writeHead(404,{'Content-Type': 'text/plain'});
