@@ -1,0 +1,19 @@
+{
+  "name": "news-portal-server",
+  "version": "1.0.0",
+  "description": "A http server for news-portal website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAFIZ009/news-portal-server.git"
+  },
+  "author": "Jalal Ahmed Nafiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAFIZ009/news-portal-server/issues"
+  },
+  "homepage": "https://github.com/NAFIZ009/news-portal-server#readme"
+}
