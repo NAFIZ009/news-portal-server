@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/NAFIZ009/news-portal-server/issues"
   },
-  "homepage": "https://github.com/NAFIZ009/news-portal-server#readme"
+  "homepage": "https://github.com/NAFIZ009/news-portal-server#readme",
+  "dependencies": {
+    "openssl": "^2.0.0"
+  }
 }
