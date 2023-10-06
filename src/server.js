@@ -1,6 +1,8 @@
 const http = require('http');
-
-const server=http.createServer((req, res) => {
+const htmlRoute = require('../src/routes/htmlRoute');
+const cssRoute = require('../src/routes/cssRoute');
+const jsRoute = require('../src/routes/jsRoute');
+const server=http.createServer(async(req, res) => {
     if(req.method!='GET')
     {
         const error=new Error('Method Not Allowed');
@@ -13,18 +15,42 @@ const server=http.createServer((req, res) => {
     {
         case '/':
             res.writeHead(200,{'Content-Type':'text/html'});
-            res.end('<h1>home page</h1>');
-            // res.end(htmlRoute( ));
+            htmlRoute((err,data)=>{
+                if(err)
+                {
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('Internal Server Error');
+                }else{
+                    res.end(data);
+                }
+                
+            });
             break;
         case '/stylesheets':
             res.writeHead(200,{'Content-Type':'text/css'});
-            res.end('<h1>stylesheets page</h1>');
-            // res.end(cssRoute( ));
+            cssRoute((err,data)=>{
+                if(err)
+                {
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('Internal Server Error');
+                }else{
+                    res.end(data);
+                }
+                
+            });
             break;
         case '/js':
             res.writeHead(200,{'Content-Type':'	text/javascript'});
-            res.end('<h1>js page</h1>');
-            // res.end(jsRoute( ));
+            jsRoute((err,data)=>{
+                if(err)
+                {
+                    res.writeHead(500, { 'Content-Type': 'text/plain' });
+                    res.end('Internal Server Error');
+                }else{
+                    res.end(data);
+                }
+                
+            });
             break;
         case '/img':
             res.writeHead(200,{'Content-Type':'	image/jpeg'});
@@ -32,11 +58,11 @@ const server=http.createServer((req, res) => {
             // res.end(imgRoute( ));
             break;
         default:
-            res.writeHead(404);
-            res.end(new Error('Not Found'));
+            res.writeHead(404,{'Content-Type': 'text/plain'});
+            res.end('nothing found');
     }
 });
 
 server.listen(5001,()=>{
     console.log('listening on port',5001);
-})
+});

@@ -1,113 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <!-- custom styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://localhost:5001/stylesheets" />
     <title>Nafiz's Portal</title>
-</head>
-<body class="d-flex flex-column justify-content-between">
+  </head>
+  <body class="d-flex flex-column justify-content-between">
     <div class="container">
-        <!-- navbar -->
-        <header>
-            <nav class="container navbar navbar-expand-lg navbar-light border-bottom border-2 py-4">
-                <div class="container-fluid">
-                  <a class="navbar-brand fw-bold" href="index.html"><span class="parpelback rounded ">NAFIZ'S</span> <span class="parpelcolor">PORTAL</span></a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav gap-2 align-items-center">
-                      <li class="nav-item parpelcolor">
-                        <a class="nav-link fw-bold fs-5" href="index.html">News</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link fs-5" id="blog-btn" style="cursor: pointer;">Blogs</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/NAFIZ009" target="_blank"><img src="img/img.jpg" class="rounded-pill" width="34px" alt=""></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </header>
-
-        <main class="mt-5" id="main-display">
-            <!-- catagory part -->
-            <div class="container" id="catagotryContainer">
-
+      <!-- navbar -->
+      <header>
+        <nav
+          class="container navbar navbar-expand-lg navbar-light border-bottom border-2 py-4"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/"
+              ><span class="parpelback rounded">NAFIZ'S</span>
+              <span class="parpelcolor">PORTAL</span></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav gap-2 align-items-center">
+                <li class="nav-item parpelcolor">
+                  <a class="nav-link fw-bold fs-5" href="index.html">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5" id="blog-btn" style="cursor: pointer"
+                    >Blogs</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://github.com/NAFIZ009"
+                    target="_blank"
+                    ><img
+                      src="img/img.jpg"
+                      class="rounded-pill"
+                      width="34px"
+                      alt=""
+                  /></a>
+                </li>
+              </ul>
             </div>
-            <!-- newsCount part -->
-            <div class="container mt-3 " id="itemCountContainer">
+          </div>
+        </nav>
+      </header>
 
+      <main class="mt-5" id="main-display">
+        <!-- catagory part -->
+        <div class="container" id="catagotryContainer"></div>
+        <!-- newsCount part -->
+        <div class="container mt-3" id="itemCountContainer"></div>
+        <!-- sortBar -->
+        <div
+          class="container mt-3 d-flex flex-sm-row flex-column justify-content-between gap-3 d-none"
+          id="sortBarContainer"
+        >
+          <div class="leftSideBtn d-flex gap-2 align-items-center">
+            <span>Sort By View:</span>
+            <div class="dropdown">
+              <button
+                class="btn parpelback dropdown-toggle fw-bold"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Default
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a class="dropdown-item" id="DefaultBtn" href="#">Default</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" id="topRatedBtn" href="#"
+                    >Top Rated</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" id="TPBtn" href="#">Today's Pick</a>
+                </li>
+              </ul>
             </div>
-            <!-- sortBar -->
-            <div class="container mt-3 d-flex flex-sm-row flex-column justify-content-between gap-3 d-none" id="sortBarContainer">
-              <div class="leftSideBtn d-flex gap-2 align-items-center">
-                <span>Sort By View:</span>
-                <div class="dropdown">
-                  <button class="btn parpelback dropdown-toggle fw-bold" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Default
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" id="DefaultBtn" href="#">Default</a></li>
-                    <li><a class="dropdown-item" id="topRatedBtn" href="#">Top Rated</a></li>
-                    <li><a class="dropdown-item" id="TPBtn" href="#">Today's Pick</a></li>
-                  </ul>
-                </div>
+          </div>
+          <div class="rightSidebtn">
+            <button class="parpelback border-0 rounded" id="todaysPickBtn">
+              All News
+            </button>
+            <button class="border-0 rounded" id="trandingBtn">Trending</button>
+          </div>
+        </div>
+        <!-- newsCart Part -->
+        <div class="container mt-3" id="newsContainer"></div>
+        <!-- modal Part -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-              <div class="rightSidebtn">
-                <button class="parpelback border-0 rounded " id="todaysPickBtn">All News</button>
-                <button class="border-0 rounded" id="trandingBtn">Trending</button>
+              <div class="modal-body" id="modal-content"></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
               </div>
             </div>
-            <!-- newsCart Part -->
-            <div class="container mt-3" id="newsContainer">
-
-            </div>
-            <!-- modal Part -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="modal-content">
-                      
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <!-- loader -->
-            <div class="container d-flex align-items-center w-75 mt-5 text-success fw-bold d-none" id="loader">
-              <strong>Loading...</strong>
-              <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-            </div>
-            <!-- error message -->
-            <div class="container d-none" id="errContainer">
-                <p class="text-danger fw-bold fs-1">CAN'T FINDING ANY DATA</p>
-            </div>
-        </main>
+          </div>
+        </div>
+        <!-- loader -->
+        <div
+          class="container d-flex align-items-center w-75 mt-5 text-success fw-bold d-none"
+          id="loader"
+        >
+          <strong>Loading...</strong>
+          <div
+            class="spinner-border ms-auto"
+            role="status"
+            aria-hidden="true"
+          ></div>
+        </div>
+        <!-- error message -->
+        <div class="container d-none" id="errContainer">
+          <p class="text-danger fw-bold fs-1">CAN'T FINDING ANY DATA</p>
+        </div>
+      </main>
     </div>
 
-    <footer class="fw-bold d-flex flex-column justify-content-center align-items-center mt-5">
+    <footer
+      class="fw-bold d-flex flex-column justify-content-center align-items-center mt-5"
+    >
       <h5>COPYRIGHT 2022</h5>
       <h6>JALAL AHMED NAFIZ</h6>
     </footer>
     <!-- font awsome -->
-    <script src="https://kit.fontawesome.com/23c828fab0.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/23c828fab0.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <!-- custom js -->
-    <script src="index.js"></script>
-</body>
+    <script src="http://localhost:5001/js"></script>
+  </body>
 </html>
